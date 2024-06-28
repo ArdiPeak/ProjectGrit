@@ -11,9 +11,14 @@ public class penciCardscript : MonoBehaviour
     public string cardDesc = "Yeet the pencils";
     public char cardCode = 'P';
 
+    public playerScript playerData;
+    
+    //if the card clicked
     void OnMouseDown(){
-       Debug.Log("Selected Pencil");
-    }
+            Debug.Log("Selected Pencil");
+            playerData.selectedCard = cardCode;
+            playerData.atkPlayer = dmg;
+    }  
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,6 @@ public class penciCardscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+          
     }
 }
