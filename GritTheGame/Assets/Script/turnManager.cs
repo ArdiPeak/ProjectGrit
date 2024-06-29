@@ -16,7 +16,7 @@ public class turnManager : MonoBehaviour
     // Update is called once per frame
     void Update(){
         if (playerTurn != true){
-            playerData.hpPlayer -= teachData.atkOpp;
+            playerData.hpPlayer -= teachData.atkOpp;  //enemy atk player
             Debug.Log("Enemy atk!");
             playerTurn = true;
         }

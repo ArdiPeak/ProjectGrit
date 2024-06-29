@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class playerScript : MonoBehaviour
 {
+    public int maxHpPlayer = 15;
     public int hpPlayer;
     public int atkPlayer;
     public int defPlayer;
