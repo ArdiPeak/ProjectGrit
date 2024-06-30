@@ -9,14 +9,14 @@ public class penciCardscript : MonoBehaviour
     public int cost = 1;
     public string cardName = "Pencils Throw";
     public string cardDesc = "Yeet the pencils";
-    public char cardCode = 'P';
+    public int cardType = 1;
 
     public playerScript playerData;
     
     //if the card clicked
     void OnMouseDown(){
             Debug.Log("Selected Pencil");
-            playerData.selectedCard = cardCode;
+            playerData.selectedCard = cardType;
             playerData.atkPlayer = dmg;
     }  
 

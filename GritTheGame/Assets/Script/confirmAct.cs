@@ -21,12 +21,12 @@ public class confirmAct : MonoBehaviour
 
     //if the confirm button clicked
     void OnMouseDown(){
-            if (playerData.selectedCard != 'A' && turnManager.playerTurn == true){  //run action if player turn and card selected 
+            if (playerData.selectedCard != 0 && turnManager.playerTurn == true){  //run action if player turn and card selected 
                 Debug.Log("Action Confirmed");
-                teachData.hpOpp -= playerData.atkPlayer;
+                teachData.hpOpp -= playerData.atkPlayer;  //will changed base on card
                 turnManager.playerTurn = false;
-                playerData.selectedCard = 'A';
-            }else if(playerData.selectedCard == 'A' && turnManager.playerTurn == true){ //ask to select card if no card selected 
+                playerData.selectedCard = 0;
+            }else if(playerData.selectedCard == 0 && turnManager.playerTurn == true){ //ask to select card if no card selected 
                  Debug.Log("Please Select a Card");
             }
     }  

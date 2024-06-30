@@ -9,7 +9,7 @@ public class playerScript : MonoBehaviour
     public int atkPlayer;
     public int defPlayer;
     public int energy = 10;
-    public char selectedCard = 'A';
+    public int selectedCard = 0; // 0 = no card selected
     // Start is called before the first frame update
     void Start()
     {
