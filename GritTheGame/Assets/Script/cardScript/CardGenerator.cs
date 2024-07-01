@@ -15,9 +15,9 @@ public class CardGenerator : MonoBehaviour
     }
 
     void Update(){
-        if (Input.anyKeyDown){
-            GenerateRandomCard();  //generate card when recieve input
-        }
+        //if (Input.anyKeyDown){
+         //   GenerateRandomCard();  //generate card when recieve input
+        //}
     }
 
     void InitializeCards()

@@ -2,23 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class penciCardscript : MonoBehaviour
+public class doorCardScript : MonoBehaviour
 {
     public int level = 0; //rarity C
-    public int dmg = 3;
-    public int cost = 1;
-    public string cardName = "Pencils Throw";
-    public string cardDesc = "Yeet the pencils";
-    public int cardType = 1;
+    public int block = 5;
+    public int cost = 4;  //gain 4 cost
+    public string cardName = "Knock! Knock!";
+    public string cardDesc = "Hold a door and gain 5 shield";
+    public int cardType = 9;
 
     public playerScript playerData;
     
     //if the card clicked
     void OnMouseDown(){
-            Debug.Log("Selected Pencil");
+            Debug.Log("Selected Door");
             playerData.selectedCard = cardType;
-            playerData.atkPlayer = dmg;
-    }  
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +28,6 @@ public class penciCardscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          
+        
     }
 }
