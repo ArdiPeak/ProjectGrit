@@ -12,6 +12,7 @@ public class playerScript : MonoBehaviour
     public int selectedCard = 0; // 0 = no card selected
     public bool haveBuff = false;
     public int haveSteal = 0;
+    public bool haveParry = false;
 
     // Start is called before the first frame update
     void Start()

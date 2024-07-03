@@ -8,8 +8,10 @@ public class turnManager : MonoBehaviour
     public playerScript playerData;
     public enemyTScript teachData;
     public poisonCardScript poisonAction;
+    public shieldScript shieldData;
 
     public int dmgReceive;
+    public int damageAbsorbedByDefense;
 
     // Start is called before the first frame update
     void Start(){
@@ -30,7 +32,7 @@ public class turnManager : MonoBehaviour
             // Reduce defense first
             if (playerData.defPlayer > 0)
             {
-                int damageAbsorbedByDefense = Mathf.Min(playerData.defPlayer, dmgReceive);
+                damageAbsorbedByDefense = Mathf.Min(playerData.defPlayer, dmgReceive);
                 playerData.defPlayer -= damageAbsorbedByDefense;
                 dmgReceive -= damageAbsorbedByDefense;
             }
@@ -42,6 +44,14 @@ public class turnManager : MonoBehaviour
             }
             Debug.Log("Enemy atk!");
             playerTurn = true;
+        }
+
+        if (playerTurn == true && shieldData.readyParry == true){
+            Debug.Log("Parried " + shieldData.dmgParry + " enemy atk!");
+            teachData.hpOpp -= shieldData.dmgParry;
+            shieldData.storedDmg = 0;     //reset stored dmg
+            shieldData.dmgParry = 0;      //reset parry dmg
+            playerData.haveParry = false;   //reset parry state
         }
     }
 }

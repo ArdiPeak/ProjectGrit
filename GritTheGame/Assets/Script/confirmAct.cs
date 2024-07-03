@@ -196,6 +196,7 @@ public class confirmAct : MonoBehaviour
                     Debug.Log(mirrorAction.cardName);
                     playerData.energy += mirrorAction.cost;             //give player energy
                     playerData.defPlayer += mirrorAction.block;           //add shield
+                    playerData.haveParry = true;
                     playerData.atkPlayer = 0;                           //reset player atk
                     turnManager.playerTurn = false;                     //make turn for enemy after this
                     playerData.selectedCard = 0;                        //reset selected card

@@ -28,6 +28,9 @@ public class healthScript : MonoBehaviour
         if (playerData.hpPlayer < 0){
             playerData.hpPlayer = 0;        //set the min hp to 0
         }
+        if (playerData.hpPlayer > playerData.maxHpPlayer){
+            playerData.hpPlayer = playerData.maxHpPlayer;        //set the min hp to 0
+        }
     }
 
     void UpdateHealthText(int currentHealth, int maxHealth)
