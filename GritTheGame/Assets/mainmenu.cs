@@ -5,9 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void Playgame ()
+    public void Playgame()
     {
         SceneManager.LoadSceneAsync(1);    
+    }
+
+    public void CutScene()
+    {
+        SceneManager.LoadScene("Cutscene");
+
     }
 
     public void QuitGame()
