@@ -26,12 +26,16 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void NextStage()
+    public void NextStage1()
+    {
+        SceneManager.LoadScene("stage1");
+        Time.timeScale = 1;
+    }
+    public void NextStage2()
     {
         SceneManager.LoadScene("stage2");
         Time.timeScale = 1;
     }
-
     public void Cutscene()
     {
         SceneManager.LoadScene("Cutscene");
