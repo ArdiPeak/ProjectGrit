@@ -8,16 +8,11 @@ public class CardGenerator : MonoBehaviour
     private List<Card> availableCards; // List of cards that have not been generated yet
     private List<Card> generatedCards; // List of already generated cards
 
+    public GameObject cardPrefab; // Prefab for card GameObjects
+
     void Start()
     {
         InitializeCards();
-        // Generate more cards as needed
-    }
-
-    void Update(){
-        //if (Input.anyKeyDown){
-         //   GenerateRandomCard();  //generate card when recieve input
-        //}
     }
 
     void InitializeCards()
@@ -43,12 +38,12 @@ public class CardGenerator : MonoBehaviour
         generatedCards = new List<Card>();
     }
 
-    void GenerateRandomCard()
+    public GameObject GenerateRandomCard(Vector2 position)
     {
         if (availableCards.Count == 0)
         {
             Debug.LogWarning("No more unique cards to generate!");
-            return;
+            return null;
         }
 
         // Get a random index
@@ -61,7 +56,11 @@ public class CardGenerator : MonoBehaviour
         availableCards.RemoveAt(randomIndex);
         generatedCards.Add(selectedCard);
 
+        // Instantiate the card GameObject at the given position
+        GameObject newCard = Instantiate(cardPrefab, position, Quaternion.identity);
+        newCard.name = selectedCard.name; // Assign a name to the GameObject for easier identification
+
         Debug.Log("Generated Card: " + selectedCard.name + " with value " + selectedCard.value);
+        return newCard;
     }
 }
-

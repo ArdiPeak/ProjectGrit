@@ -10,7 +10,7 @@ public class confirmAct : MonoBehaviour
 
     public penciCardscript pencilAction;            //list of all card
     public punchCardScript punchAction;
-    public punchCardScript swordAction;
+    public swordCardScript swordAction;
     public pipeCardScript pipeAction;
     public drinkCardScript drinkAction;
     public shardCardScript shardAction;
