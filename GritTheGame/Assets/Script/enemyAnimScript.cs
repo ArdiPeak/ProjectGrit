@@ -27,6 +27,7 @@ public class enemyAnimScript : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         animator.SetBool("isTeachAtk", false);
+        actionAnim.playerTurn = true;
     }
     }
 }

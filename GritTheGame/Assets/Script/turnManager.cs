@@ -12,15 +12,17 @@ public class turnManager : MonoBehaviour
 
     public int dmgReceive;
     public int damageAbsorbedByDefense;
+    public bool doneAtk;
 
     // Start is called before the first frame update
     void Start(){
         playerTurn = true;
+        doneAtk = false;
     }
 
     // Update is called once per frame
     void Update(){
-        if (playerTurn != true){
+        if (playerTurn != true && doneAtk == false){
             // Deal Dot to enemy
             if (teachData.haveDebuff >0){
                 teachData.hpOpp -= poisonAction.dmg;
@@ -43,15 +45,13 @@ public class turnManager : MonoBehaviour
                 playerData.hpPlayer -= dmgReceive;
             }
             Debug.Log("Enemy atk!");
-            playerTurn = true;
+            doneAtk = true;
         }
 
-        if (playerTurn == true && shieldData.readyParry == true){
-            Debug.Log("Parried " + shieldData.dmgParry + " enemy atk!");
-            teachData.hpOpp -= shieldData.dmgParry;
-            shieldData.storedDmg = 0;     //reset stored dmg
-            shieldData.dmgParry = 0;      //reset parry dmg
-            playerData.haveParry = false;   //reset parry state
+        if (playerTurn == true && playerData.haveParry == true){
+            teachData.hpOpp -= teachData.atkOpp;
+            Debug.Log("Parried " + teachData.atkOpp + " damage!");
+            playerData.haveParry = false;
         }
     }
 }

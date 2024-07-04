@@ -606,11 +606,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 10311384}
+  teachData: {fileID: 1214632147}
   dmgData: {fileID: 626598557}
   sheildTxt: {fileID: 661459833}
-  storedDmg: 0
-  dmgParry: 0
-  readyParry: 0
 --- !u!212 &91245572
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1419,6 +1417,7 @@ MonoBehaviour:
   shieldData: {fileID: 91245571}
   dmgReceive: 0
   damageAbsorbedByDefense: 0
+  doneAtk: 0
 --- !u!4 &626598558
 Transform:
   m_ObjectHideFlags: 0
@@ -1964,7 +1963,7 @@ Transform:
   m_GameObject: {fileID: 750438007}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.8, y: -9.9, z: 0.08445641}
+  m_LocalPosition: {x: 45.2, y: -12, z: 0.08445641}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2303,7 +2302,7 @@ Transform:
   m_GameObject: {fileID: 880017638}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20.8, y: -14.5, z: 0.22532485}
+  m_LocalPosition: {x: -19.59, y: -16.16, z: 0.22532485}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3038,7 +3037,7 @@ Transform:
   m_GameObject: {fileID: 1100614198}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.799999, y: -14.5, z: 0.22532485}
+  m_LocalPosition: {x: -9.59, y: -16.16, z: 0.22532485}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3314,7 +3313,7 @@ Transform:
   m_GameObject: {fileID: 1181430697}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8000002, y: -14.5, z: 0.22532485}
+  m_LocalPosition: {x: 0.4099989, y: -16.16, z: 0.22532485}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3809,7 +3808,7 @@ Transform:
   m_GameObject: {fileID: 1412413411}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.1, y: -9.2, z: 0.08445641}
+  m_LocalPosition: {x: -6.6, y: -12.8, z: 0.08445641}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4170,8 +4169,8 @@ Transform:
   m_GameObject: {fileID: 1727397948}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.98, y: 2.4237623, z: 0.08459239}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalPosition: {x: 45.24, y: 2.25, z: 0.08459239}
+  m_LocalScale: {x: 4.64, y: 4.64, z: 4.64}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 77252807}
@@ -4320,7 +4319,7 @@ Transform:
   m_GameObject: {fileID: 1800664738}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.9, y: -14.7, z: 0.08445641}
+  m_LocalPosition: {x: 35.1, y: -13.4, z: 0.08445641}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4438,7 +4437,6 @@ MonoBehaviour:
   level: 0
   block: 7
   cost: 2
-  storedDmg: 0
   cardName: Return To The Owner!
   cardDesc: Gain 7 Shield and deal half of the damage recieve after shield break.
   cardType: 10

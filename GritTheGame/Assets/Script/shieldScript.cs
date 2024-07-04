@@ -7,12 +7,9 @@ using TMPro;
 public class shieldScript : MonoBehaviour
 {
     public playerScript playerData;
+    public enemyTScript teachData;
     public turnManager dmgData;
     public TextMeshProUGUI sheildTxt;
-
-    public int storedDmg;
-    public int dmgParry;
-    public bool readyParry = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,19 +22,13 @@ public class shieldScript : MonoBehaviour
     {
         int totalDef = playerData.defPlayer;
         UpdateShieldText(totalDef);
-
-        if (playerData.haveParry == true && playerData.defPlayer > 0){
-            storedDmg += dmgData.damageAbsorbedByDefense;
-            if (playerData.defPlayer <= 0){
-                dmgParry = storedDmg;
-                readyParry = true;
-            }
-        }
-
     }
 
     void UpdateShieldText(int totalDef)
     {
         sheildTxt.text = totalDef + " ";
     }
+
+   
+
 }

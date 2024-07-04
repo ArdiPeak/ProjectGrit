@@ -32,6 +32,7 @@ public class confirmAct : MonoBehaviour
 
     //if the confirm button clicked
     void OnMouseDown(){
+        turnManager.doneAtk = false;
             if (playerData.selectedCard == 1 && turnManager.playerTurn == true){  //run action [Pencil]
                 if (playerData.energy >= pencilAction.cost){            //check if player have suffivient energy
                     Debug.Log(pencilAction.cardName);
