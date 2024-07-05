@@ -140,7 +140,7 @@ public class confirmAct : MonoBehaviour
             }else if (playerData.selectedCard == 5 && turnManager.playerTurn == true){  //run action [Drink]
                 if (playerData.energy >= drinkAction.cost){            //check if player have suffivient energy
                     Debug.Log(drinkAction.cardName);
-                    playerData.energy -= drinkAction.cost;             //deduct player energy
+                    playerData.energy += drinkAction.cost;             //give player energy
                     playerData.hpPlayer += drinkAction.heal;             //heal player
                     playerData.atkPlayer = 0;                           //reset player atk
                     turnManager.playerTurn = false;                     //make turn for enemy after this

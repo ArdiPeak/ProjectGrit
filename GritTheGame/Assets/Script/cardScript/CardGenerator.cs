@@ -8,8 +8,6 @@ public class CardGenerator : MonoBehaviour
     private List<Card> availableCards; // List of cards that have not been generated yet
     private List<Card> generatedCards; // List of already generated cards
 
-    public GameObject cardPrefab; // Prefab for card GameObjects
-
     void Start()
     {
         InitializeCards();
@@ -18,20 +16,30 @@ public class CardGenerator : MonoBehaviour
     void InitializeCards()
     {
         // Initialize allCards list with all possible cards
+        // Assign the appropriate prefab to each card
         allCards = new List<Card>
         {
-            new Card("pencil", 1),
-            new Card("punch", 2),
-            new Card("sword", 3),
-            new Card("pipe", 4),
-            new Card("drink", 5),
-            new Card("shard", 6),
-            new Card("poison", 7),
-            new Card("grab", 8),
-            new Card("door", 9),
-            new Card("mirror", 10),
+            new Card("pencil", 1, Resources.Load<GameObject>("Prefabs/pencilCard")),
+            new Card("punch", 2, Resources.Load<GameObject>("Prefabs/punchCard")),
+            new Card("sword", 3, Resources.Load<GameObject>("Prefabs/swordCard")),
+            new Card("pipe", 4, Resources.Load<GameObject>("Prefabs/pipeCard")),
+            new Card("drink", 5, Resources.Load<GameObject>("Prefabs/drinkCard")),
+            new Card("shard", 6, Resources.Load<GameObject>("Prefabs/shardCard")),
+            new Card("poison", 7, Resources.Load<GameObject>("Prefabs/poisonCard")),
+            new Card("grab", 8, Resources.Load<GameObject>("Prefabs/grabCard")),
+            new Card("door", 9, Resources.Load<GameObject>("Prefabs/doorCard")),
+            new Card("mirror", 10, Resources.Load<GameObject>("Prefabs/mirrorCard")),
             // Add all your cards here
         };
+
+        // Check if any prefab is not loaded correctly
+        foreach (Card card in allCards)
+        {
+            if (card.prefab == null)
+            {
+                Debug.LogError("Prefab for card " + card.name + " could not be loaded. Check the path and name.");
+            }
+        }
 
         // Initialize availableCards with allCards initially
         availableCards = new List<Card>(allCards);
@@ -56,8 +64,15 @@ public class CardGenerator : MonoBehaviour
         availableCards.RemoveAt(randomIndex);
         generatedCards.Add(selectedCard);
 
-        // Instantiate the card GameObject at the given position
-        GameObject newCard = Instantiate(cardPrefab, position, Quaternion.identity);
+        // Check if the prefab is null before instantiating
+        if (selectedCard.prefab == null)
+        {
+            Debug.LogError("The prefab for " + selectedCard.name + " is null. Check the initialization.");
+            return null;
+        }
+
+        // Instantiate the card GameObject at the given position using the card's specific prefab
+        GameObject newCard = Instantiate(selectedCard.prefab, position, Quaternion.identity);
         newCard.name = selectedCard.name; // Assign a name to the GameObject for easier identification
 
         Debug.Log("Generated Card: " + selectedCard.name + " with value " + selectedCard.value);

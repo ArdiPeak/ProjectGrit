@@ -5,8 +5,8 @@ using UnityEngine;
 public class drinkCardScript : MonoBehaviour
 {
     public int level = 0; //rarity C
-    public int heal = 3;
-    public int cost = 2;
+    public int heal = 5;
+    public int cost = 3;
     public string cardName = "Take 5 Please!";
     public string cardDesc = "Drink to heal 5 HP";
     public int cardType = 5;

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9863d57282925448b140fea57ec4a93, type: 3}
+  m_Name: door
+  m_EditorClassIdentifier: 
+  cardAtk: 0
+  cardHeal: 0
+  cardBuff: 0
+  cardDef: 5
+  cardCost: 0
+  cardEnerGain: 5
+  cardType: 9
+  cardName: Knock! Knock!
+  cardDesc: Block attack with tough door.
+  cardRare: 67
+  cardImg: {fileID: 1529543096, guid: 78df139512631a54684aed2ed66f5144, type: 3}

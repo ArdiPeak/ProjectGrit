@@ -6,7 +6,7 @@ public class doorCardScript : MonoBehaviour
 {
     public int level = 0; //rarity C
     public int block = 5;
-    public int cost = 4;  //gain 4 cost
+    public int cost = 5;  //gain 5 cost
     public string cardName = "Knock! Knock!";
     public string cardDesc = "Hold a door and gain 5 shield";
     public int cardType = 9;
