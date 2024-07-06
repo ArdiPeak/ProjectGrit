@@ -19,16 +19,16 @@ public class CardGenerator : MonoBehaviour
         // Assign the appropriate prefab to each card
         allCards = new List<Card>
         {
-            new Card("pencil", 1, Resources.Load<GameObject>("Prefabs/pencilCard")),
-            new Card("punch", 2, Resources.Load<GameObject>("Prefabs/punchCard")),
-            new Card("sword", 3, Resources.Load<GameObject>("Prefabs/swordCard")),
-            new Card("pipe", 4, Resources.Load<GameObject>("Prefabs/pipeCard")),
-            new Card("drink", 5, Resources.Load<GameObject>("Prefabs/drinkCard")),
-            new Card("shard", 6, Resources.Load<GameObject>("Prefabs/shardCard")),
-            new Card("poison", 7, Resources.Load<GameObject>("Prefabs/poisonCard")),
-            new Card("grab", 8, Resources.Load<GameObject>("Prefabs/grabCard")),
-            new Card("door", 9, Resources.Load<GameObject>("Prefabs/doorCard")),
-            new Card("mirror", 10, Resources.Load<GameObject>("Prefabs/mirrorCard")),
+            new Card("pencil", 1, Resources.Load<GameObject>("Prefabs/card1")),
+            new Card("punch", 2, Resources.Load<GameObject>("Prefabs/card2")),
+            new Card("sword", 3, Resources.Load<GameObject>("Prefabs/card3")),
+            new Card("pipe", 4, Resources.Load<GameObject>("Prefabs/card4")),
+            new Card("drink", 5, Resources.Load<GameObject>("Prefabs/card5")),
+            new Card("shard", 6, Resources.Load<GameObject>("Prefabs/card6")),
+            new Card("poison", 7, Resources.Load<GameObject>("Prefabs/card7")),
+            new Card("grab", 8, Resources.Load<GameObject>("Prefabs/card8")),
+            new Card("door", 9, Resources.Load<GameObject>("Prefabs/card9")),
+            new Card("mirror", 10, Resources.Load<GameObject>("Prefabs/card10")),
             // Add all your cards here
         };
 
@@ -46,7 +46,7 @@ public class CardGenerator : MonoBehaviour
         generatedCards = new List<Card>();
     }
 
-    public GameObject GenerateRandomCard(Vector2 position)
+    public GameObject GenerateRandomCard(Vector3 position, Transform parent)
     {
         if (availableCards.Count == 0)
         {
@@ -71,9 +71,10 @@ public class CardGenerator : MonoBehaviour
             return null;
         }
 
-        // Instantiate the card GameObject at the given position using the card's specific prefab
-        GameObject newCard = Instantiate(selectedCard.prefab, position, Quaternion.identity);
+        // Instantiate the card GameObject at the given position with the specified parent
+        GameObject newCard = Instantiate(selectedCard.prefab, parent);
         newCard.name = selectedCard.name; // Assign a name to the GameObject for easier identification
+        newCard.transform.localPosition = position; // Set the local position in the parent
 
         Debug.Log("Generated Card: " + selectedCard.name + " with value " + selectedCard.value);
         return newCard;

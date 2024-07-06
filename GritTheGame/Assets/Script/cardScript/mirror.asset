@@ -22,4 +22,4 @@ MonoBehaviour:
   cardName: Return To The Owner
   cardDesc: Make the enemy attack themselves.
   cardRare: 67
-  cardImg: {fileID: 0}
+  cardImg: {fileID: -1456342067, guid: 78df139512631a54684aed2ed66f5144, type: 3}

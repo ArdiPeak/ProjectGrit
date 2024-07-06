@@ -22,6 +22,7 @@ public class CardDisplay : MonoBehaviour
    Color newColor6;
    Color newColor7;
    Color newColor8;
+   
     void Start(){
         cardSprite.sprite = card.cardImg;   //display sprite
         
