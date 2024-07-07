@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class InHandScript : MonoBehaviour
+public class CardHandler : MonoBehaviour
 {
     // Define the positions of the hand slots
     public Vector3[] handSlotPos = new Vector3[3];
@@ -14,6 +14,10 @@ public class InHandScript : MonoBehaviour
 
     // Parent transform for hand slots in the hierarchy
     public Transform handSlotsParent;
+
+    private GameObject selectedCard;
+    private CardTemplate selectedCardData;
+
 
     void Start()
     {
@@ -97,4 +101,6 @@ public class InHandScript : MonoBehaviour
             handSlotsParent as RectTransform, screenPoint, Camera.main, out Vector2 canvasPos);
         return canvasPos;
     }
+
+    
 }

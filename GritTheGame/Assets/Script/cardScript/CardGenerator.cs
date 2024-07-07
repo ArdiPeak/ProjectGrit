@@ -30,6 +30,7 @@ public class CardGenerator : MonoBehaviour
             new Card("door", 9, Resources.Load<GameObject>("Prefabs/card9")),
             new Card("mirror", 10, Resources.Load<GameObject>("Prefabs/card10")),
             // Add all your cards here
+            
         };
 
         // Check if any prefab is not loaded correctly
