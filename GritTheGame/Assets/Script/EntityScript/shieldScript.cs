@@ -6,27 +6,25 @@ using TMPro;
 
 public class shieldScript : MonoBehaviour
 {
-    public playerScript playerData;
-    public enemyTScript teachData;
-    public turnManager dmgData;
+    public PlayerTemplate playerData;
     public TextMeshProUGUI sheildTxt;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerData.defPlayer = 0;
+        playerData.playerDef = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        int totalDef = playerData.defPlayer;
+        int totalDef = playerData.playerDef;
         UpdateShieldText(totalDef);
     }
 
     void UpdateShieldText(int totalDef)
     {
-        sheildTxt.text = totalDef + " ";
+        sheildTxt.text = totalDef.ToString();
     }
 
    

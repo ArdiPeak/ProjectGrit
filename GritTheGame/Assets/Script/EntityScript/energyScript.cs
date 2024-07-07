@@ -6,7 +6,7 @@ using TMPro;
 
 public class energyScript : MonoBehaviour
 {
-    public playerScript playerData;
+    public PlayerTemplate playerData;
 
     public GameObject eneBar1;
     public GameObject eneBar2;
@@ -24,7 +24,7 @@ public class energyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerData.energy = 10;
+        playerData.playerEnergy = 10;
         eneBar1.SetActive(true);
         eneBar2.SetActive(true);
         eneBar3.SetActive(true);
@@ -40,14 +40,14 @@ public class energyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerData.energy > 10){
-            playerData.energy = 10;
+        if (playerData.playerEnergy > 10){
+            playerData.playerEnergy = 10;
         }
 
-        int storedEner = playerData.energy; 
+        int storedEner = playerData.playerEnergy; 
         UpdateEnergyText(storedEner);
 
-        if (playerData.energy == 0){
+        if (playerData.playerEnergy == 0){
             eneBar1.SetActive(false);
             eneBar2.SetActive(false);
             eneBar3.SetActive(false);
@@ -58,7 +58,7 @@ public class energyScript : MonoBehaviour
             eneBar8.SetActive(false);
             eneBar9.SetActive(false);
             eneBar10.SetActive(false);
-        }else if (playerData.energy == 1){
+        }else if (playerData.playerEnergy == 1){
             eneBar1.SetActive(true);
             eneBar2.SetActive(false);
             eneBar3.SetActive(false);
@@ -69,7 +69,7 @@ public class energyScript : MonoBehaviour
             eneBar8.SetActive(false);
             eneBar9.SetActive(false);
             eneBar10.SetActive(false);
-        }else if (playerData.energy == 2){
+        }else if (playerData.playerEnergy == 2){
             eneBar1.SetActive(true);
             eneBar2.SetActive(true);
             eneBar3.SetActive(false);
@@ -80,7 +80,7 @@ public class energyScript : MonoBehaviour
             eneBar8.SetActive(false);
             eneBar9.SetActive(false);
             eneBar10.SetActive(false);
-        }else if (playerData.energy == 3){
+        }else if (playerData.playerEnergy == 3){
             eneBar1.SetActive(true);
             eneBar2.SetActive(true);
             eneBar3.SetActive(true);
@@ -91,7 +91,7 @@ public class energyScript : MonoBehaviour
             eneBar8.SetActive(false);
             eneBar9.SetActive(false);
             eneBar10.SetActive(false);
-        }else if (playerData.energy == 4){
+        }else if (playerData.playerEnergy == 4){
             eneBar1.SetActive(true);
             eneBar2.SetActive(true);
             eneBar3.SetActive(true);
@@ -102,7 +102,7 @@ public class energyScript : MonoBehaviour
             eneBar8.SetActive(false);
             eneBar9.SetActive(false);
             eneBar10.SetActive(false);
-        }else if (playerData.energy == 5){
+        }else if (playerData.playerEnergy == 5){
             eneBar1.SetActive(true);
             eneBar2.SetActive(true);
             eneBar3.SetActive(true);
@@ -113,7 +113,7 @@ public class energyScript : MonoBehaviour
             eneBar8.SetActive(false);
             eneBar9.SetActive(false);
             eneBar10.SetActive(false);
-        }else if (playerData.energy == 6){
+        }else if (playerData.playerEnergy == 6){
             eneBar1.SetActive(true);
             eneBar2.SetActive(true);
             eneBar3.SetActive(true);
@@ -124,7 +124,7 @@ public class energyScript : MonoBehaviour
             eneBar8.SetActive(false);
             eneBar9.SetActive(false);
             eneBar10.SetActive(false);
-        }else if (playerData.energy == 7){
+        }else if (playerData.playerEnergy == 7){
             eneBar1.SetActive(true);
             eneBar2.SetActive(true);
             eneBar3.SetActive(true);
@@ -135,7 +135,7 @@ public class energyScript : MonoBehaviour
             eneBar8.SetActive(false);
             eneBar9.SetActive(false);
             eneBar10.SetActive(false);
-        }else if (playerData.energy == 8){
+        }else if (playerData.playerEnergy == 8){
             eneBar1.SetActive(true);
             eneBar2.SetActive(true);
             eneBar3.SetActive(true);
@@ -146,7 +146,7 @@ public class energyScript : MonoBehaviour
             eneBar8.SetActive(true);
             eneBar9.SetActive(false);
             eneBar10.SetActive(false);
-        }else if (playerData.energy == 9){
+        }else if (playerData.playerEnergy == 9){
             eneBar1.SetActive(true);
             eneBar2.SetActive(true);
             eneBar3.SetActive(true);
@@ -157,7 +157,7 @@ public class energyScript : MonoBehaviour
             eneBar8.SetActive(true);
             eneBar9.SetActive(true);
             eneBar10.SetActive(false);
-        }else if (playerData.energy == 10){
+        }else if (playerData.playerEnergy == 10){
             eneBar1.SetActive(true);
             eneBar2.SetActive(true);
             eneBar3.SetActive(true);

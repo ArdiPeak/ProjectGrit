@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66cce5ed50cdb124b8c15c6d8c510fbe, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  playerMaxHp: 15
+  playerHp: 15
+  playerDef: 0
+  playerEnergy: 9
+  playerSteal: 0
+  haveBuff: 0
+  haveParry: 0
+  playerImg: {fileID: 487458370, guid: 37066d993e7fb80479fb01be6ea7005c, type: 3}

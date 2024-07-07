@@ -6,27 +6,27 @@ using TMPro;
 
 public class healthOppScript : MonoBehaviour
 {
-    public enemyTScript teachData;
+    public EnemyTemplate enemyData;
     public Slider slider;
     public TextMeshProUGUI hptxt;
 
     // Start is called before the first frame update
     void Start()
     {
-        teachData.hpOpp = teachData.maxhpOpp;
-        slider.maxValue = teachData.maxhpOpp;   //match bar max value with player max hp
-        slider.value = teachData.hpOpp;  //match bar vlaue with player value
+        enemyData.enemyHp = enemyData.enemyMaxHp;
+        slider.maxValue = enemyData.enemyMaxHp;   //match bar max value with player max hp
+        slider.value = enemyData.enemyHp;  //match bar vlaue with player value
     }
 
     // Update is called once per frame
     void Update()
     {
-        slider.value = teachData.hpOpp;
-        int maxHealth = teachData.maxhpOpp;
-        int currentHealth = teachData.hpOpp;
+        slider.value = enemyData.enemyHp;
+        int maxHealth = enemyData.enemyMaxHp;
+        int currentHealth = enemyData.enemyHp;
         UpdateHealthText(currentHealth,maxHealth);
-        if (teachData.hpOpp < 0){
-            teachData.hpOpp = 0;
+        if (enemyData.enemyHp < 0){
+            enemyData.enemyHp = 0;
         }
     }
 

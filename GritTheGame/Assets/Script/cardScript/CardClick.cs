@@ -13,7 +13,6 @@ public class CardClick : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Debug.Log("Card Clicked! " + cardData.cardType);
         actionButton.selectedCard = cardData.cardType;
         Debug.Log("Selected Card: " + actionButton.selectedCard);
     }

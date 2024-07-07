@@ -24,13 +24,13 @@ public class CardGenerator : MonoBehaviour
             new Card("sword", 3, Resources.Load<GameObject>("Prefabs/card3")),
             new Card("pipe", 4, Resources.Load<GameObject>("Prefabs/card4")),
             new Card("drink", 5, Resources.Load<GameObject>("Prefabs/card5")),
-            new Card("shard", 6, Resources.Load<GameObject>("Prefabs/card6")),
+           /* new Card("shard", 6, Resources.Load<GameObject>("Prefabs/card6")),
             new Card("poison", 7, Resources.Load<GameObject>("Prefabs/card7")),
             new Card("grab", 8, Resources.Load<GameObject>("Prefabs/card8")),
             new Card("door", 9, Resources.Load<GameObject>("Prefabs/card9")),
             new Card("mirror", 10, Resources.Load<GameObject>("Prefabs/card10")),
             // Add all your cards here
-            
+        */
         };
 
         // Check if any prefab is not loaded correctly
@@ -51,7 +51,6 @@ public class CardGenerator : MonoBehaviour
     {
         if (availableCards.Count == 0)
         {
-            Debug.LogWarning("No more unique cards to generate!");
             return null;
         }
 
