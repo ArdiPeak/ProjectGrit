@@ -41,4 +41,9 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Cutscene");
         Time.timeScale = 1;
     }
+    public void Endscene()
+    {
+        SceneManager.LoadScene("Endscene");
+        Time.timeScale = 1;
+    }
 }
