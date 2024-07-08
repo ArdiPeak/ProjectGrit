@@ -406,41 +406,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87c39be96cbdf3541b8b51bbcdfbbd87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedCard: 0
+  selectedCardObject: {fileID: 0}
   playerData: {fileID: 11400000, guid: c8442e0937ecba04c931db6e3ef5acf3, type: 2}
   enemyData: {fileID: 11400000, guid: 7b3637cec088d77458795ed54c3f558a, type: 2}
+  CardHandler: {fileID: 0}
   playerDmg: 0
-  pencilAtk: 0
-  pencilCost: 0
-  pencilName: 
-  punchAtk: 0
-  punchCost: 0
-  punchName: 
-  swordAtk: 0
-  swordCost: 0
-  swordName: 
-  pipeAtk: 0
-  pipeCost: 0
-  pipeName: 
-  drinkHeal: 0
-  drinkGain: 0
-  drinkName: 
-  shardBuff: 0
-  shardCost: 0
-  shardName: 
-  poisonAtk: 0
-  poisonCost: 0
-  poisonName: 
-  grabHeal: 0
-  grabCost: 0
-  grabName: 
-  doorDef: 0
-  doorGain: 0
-  doorName: 
-  mirrorDef: 0
-  mirrorGain: 0
-  mirrorName: 
-  playerAct: 0
 --- !u!4 &14317354
 Transform:
   m_ObjectHideFlags: 0
@@ -1171,7 +1141,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 14317353}
         m_TargetAssemblyTypeName: actButtHandler, Assembly-CSharp
-        m_MethodName: DoAction
+        m_MethodName: ConfirmCardSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

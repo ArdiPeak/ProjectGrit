@@ -13,7 +13,7 @@ public class CardClick : MonoBehaviour
 
     public void OnMouseDown()
     {
-        actionButton.selectedCard = cardData.cardType;
-        Debug.Log("Selected Card: " + actionButton.selectedCard);
+        actionButton.selectedCardObject = gameObject;  // Store the reference to the clicked card
+        Debug.Log("Selected Card: " + gameObject);
     }
 }
