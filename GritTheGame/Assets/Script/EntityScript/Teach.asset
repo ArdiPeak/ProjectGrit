@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Teach
   m_EditorClassIdentifier: 
   enemyMaxHp: 15
-  enemyHp: 13
+  enemyHp: 0
   enemyAtk: 4
   enemyDebuff: 0
   enemyImg: {fileID: 486893207, guid: 4b643e6506c555241888e90be63bdcb3, type: 3}

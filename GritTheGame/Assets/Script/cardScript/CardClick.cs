@@ -7,7 +7,7 @@ public class CardClick : MonoBehaviour
     public actButtHandler actionButton;
 
     void Start(){
-        actionButton = GameObject.Find("GameManager").GetComponent<actButtHandler>();
+        actionButton = GameObject.Find("ActionHandler").GetComponent<actButtHandler>();
         //to assign automaticlly
     }
 

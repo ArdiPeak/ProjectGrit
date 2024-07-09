@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   playerMaxHp: 15
-  playerHp: 15
+  playerHp: 5
   playerDef: 0
-  playerEnergy: 9
-  playerSteal: 0
+  playerEnergy: 6
+  playerSteal: 2
   haveBuff: 0
   haveParry: 0
   playerImg: {fileID: 487458370, guid: 37066d993e7fb80479fb01be6ea7005c, type: 3}

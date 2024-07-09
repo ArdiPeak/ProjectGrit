@@ -8,6 +8,10 @@ public class actButtHandler : MonoBehaviour
     public PlayerTemplate playerData;
     public EnemyTemplate enemyData;
     public CardHandler CardHandler;
+    public EnemyAnim enemyAnim;
+    public PlayerAnim playerAnim;
+
+    public GameManager GameManager;
 
     public int playerDmg;       //player total dmg after buff and card rarity boost
 
@@ -86,10 +90,15 @@ public class actButtHandler : MonoBehaviour
             Debug.Log("Player gains defends with " + cardData.card.cardName);
             StartCoroutine(PerformActionWithDelay(() => PerformDefense(cardData.card.cardDef)));
         }
+
+        GameManager.CheckWin();
+        playerAnim.PlayerAnimIdle();
+        StartCoroutine(TriggerEnemyTurn());
     }
 
     private IEnumerator PerformActionWithDelay(System.Action action)
     {
+        playerAnim.PlayerAnimAtk();
         yield return new WaitForSeconds(1.0f); // Wait for 2 seconds
         action();
 
@@ -130,6 +139,48 @@ public class actButtHandler : MonoBehaviour
     private void PerformSteal(int stealValue)
     {
         playerData.playerSteal = 2;
+    }
+
+    private IEnumerator TriggerEnemyTurn()
+    {
+        yield return new WaitForSeconds(2.0f); // Wait for 2 seconds after player action
+        StartCoroutine(EnemyTurn());
+    }
+
+    private IEnumerator EnemyTurn()
+    {   
+        if (enemyData.enemyDebuff > 0){
+            enemyData.enemyHp -= 2;
+            enemyData.enemyDebuff --;
+        }
+        yield return new WaitForSeconds(1.0f); // Wait for 1 seconds before enemy deduct enemy hp from poison
+        StartCoroutine(EnemyAttackDelay());
+        enemyAnim.EnemyAnimAtk();
+    }
+
+    private IEnumerator EnemyAttackDelay()
+    {
+        yield return new WaitForSeconds(0.6f); // Wait for 1 sec for enemy animation
+        EnemyAttack();
+    }
+
+    private void EnemyAttack()
+    {
+        Debug.Log("Enemy attacks the player!");
+        int dmgReceive = enemyData.enemyAtk;
+        // Reduce defense first
+        if (playerData.playerDef > 0){
+            int damageAbsorbedByDefense = Mathf.Min(playerData.playerDef, dmgReceive);
+            playerData.playerDef -= damageAbsorbedByDefense;
+            dmgReceive -= damageAbsorbedByDefense;
+        }
+
+            // Apply any remaining damage to HP
+        if (dmgReceive > 0){
+                playerData.playerHp -= dmgReceive;
+        }
+        enemyAnim.EnemyAnimIdle();
+        GameManager.CheckLose();
     }
 }
     
