@@ -158,6 +158,9 @@ MonoBehaviour:
   defPlayer: 0
   energy: 10
   selectedCard: 65
+  haveBuff: 0
+  haveSteal: 0
+  haveParry: 0
 --- !u!212 &10311385
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -810,9 +813,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0604f018f27a145bfa9c347cbfd623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTurn: 0
-  playerData: {fileID: 10311384}
-  teachData: {fileID: 1214632147}
 --- !u!4 &626598558
 Transform:
   m_ObjectHideFlags: 0
@@ -930,8 +930,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 912f923ddafab7d45850914ff6dc5806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 10311384}
+  playerData: {fileID: 0}
   slider: {fileID: 933972976}
+  hptxt: {fileID: 0}
 --- !u!1 &943720831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,13 +1301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b22144dca9e3c40bcd45d8908914ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  dmg: 3
-  cost: 1
-  cardName: Pencils Throw
-  cardDesc: Yeet the pencils
-  cardCode: 80
-  playerData: {fileID: 10311384}
 --- !u!212 &1001191060
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1604,8 +1598,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edcc564c06721d146b6bf235f9581c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teachData: {fileID: 1214632147}
+  enemyData: {fileID: 0}
   slider: {fileID: 1096115590}
+  hptxt: {fileID: 0}
 --- !u!114 &1096115590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1794,6 +1789,7 @@ MonoBehaviour:
   maxhpOpp: 15
   hpOpp: 15
   atkOpp: 4
+  haveDebuff: 0
 --- !u!212 &1214632148
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2173,9 +2169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a6636d196033b4aa91197c131b05e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 10311384}
-  teachData: {fileID: 1214632147}
-  turnManager: {fileID: 626598557}
 --- !u!61 &1727397952
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2500,7 +2493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3853355311776056917, guid: fd46fc1319ceb524c8064c6aa7c6a1b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3853355311776056917, guid: fd46fc1319ceb524c8064c6aa7c6a1b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
